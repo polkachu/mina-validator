@@ -1,7 +1,5 @@
 # Mina Validator Node Ansible Setup
 
-## Summary
-
 Three playbooks to set up a node.
 
 #### 1. Prepare a machine before keypair generation
