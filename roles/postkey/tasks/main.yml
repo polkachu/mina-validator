@@ -29,6 +29,7 @@
     mode: '0664'
 
 - name: Run Daemon
+  remote_user: ubuntu
   shell: |
     systemctl --user daemon-reload
     systemctl --user start mina

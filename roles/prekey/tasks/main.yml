@@ -13,6 +13,7 @@
       - unzip
       - mina-mainnet
       - mina-generate-keypair
+      - mina-bp-stats-sidecar
     state: present
     update_cache: yes
 
