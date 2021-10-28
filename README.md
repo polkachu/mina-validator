@@ -53,3 +53,9 @@ To check the health of mina block producer sidecar:
 ```bash
 sudo journalctl -f -u mina-bp-stats-sidecar.service
 ```
+
+Nominate my Mina validator:
+
+```
+B62qizDizMYmXDS7LUkocoYNnrryPCxyrJM2v8eNJzaj31aU9bUfDAM
+```
