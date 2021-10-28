@@ -1,0 +1,39 @@
+---
+- name: register public ip
+  uri:
+    url: https://api.ipify.org?format=json
+  register: public_ip
+
+- name: create .mina-env file
+  template:
+    src: mina-env.j2
+    dest: /home/ubuntu/.mina-env
+    owner: ubuntu
+    group: ubuntu
+    mode: '0664'
+
+- name: create .mina-config directory
+  file:
+    path: /home/ubuntu/.mina-config
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0775'
+
+- name: create /.mina-config/daemon.json file
+  template:
+    src: daemon.json.j2
+    dest: /home/ubuntu/.mina-config/daemon.json
+    owner: ubuntu
+    group: ubuntu
+    mode: '0664'
+
+- name: Run Daemon
+  shell: |
+    systemctl --user daemon-reload
+    systemctl --user start mina
+    systemctl --user enable mina
+    sudo loginctl enable-linger
+  args:
+    executable: /bin/bash
+  changed_when: false

@@ -1,0 +1,16 @@
+{
+  "daemon": {
+    "block-producer-password": "{{ private_key_password }}",
+    "block-producer-key": "/home/ubuntu/keys/my-wallet",
+    "log-block-creation": false,
+    "log-received-blocks": false,
+    "log-snark-work-gossip": false,
+    "log-txn-pool-gossip": false,
+    "run-snark-worker": "{{ public_key }}",
+    "snark-worker-fee": {{ snark_worker_fee }},
+    "snark-worker-parallelism": 1,
+    "work-reassignment-wait": 420000,
+    "work-selection": "seq",
+    "limited-graphql-port": 3095
+  }
+}
