@@ -1,4 +1,4 @@
-# Node Exporter (1.1.2 is good. 1.2 causes crazy amount of log errors)
+# Node Exporter
 node_exporter_version: '1.1.2'
 node_exporter_checksum: '8c1f6a317457a658e0ae68ad710f6b4098db2cad10204649b51e3c043aa3e70d'
 
