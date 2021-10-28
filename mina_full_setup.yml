@@ -1,0 +1,18 @@
+---
+- name: Wait for system ready
+  hosts: '{{ target }}'
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Wait for nodes to become reachable
+      wait_for_connection:
+
+- name: Set up everything if you know what you are doing
+  hosts: '{{ target }}'
+  become: true
+  gather_facts: false
+  roles:
+    - prepare
+    - prekey
+    - key
+    - postkey

@@ -5,7 +5,7 @@ Three playbooks to set up a node.
 #### 1. Prepare a machine before keypair generation
 
 ```bash
-ansible-playbook -i inventory mina_prekey_setup.yml -e "target=mina01"
+ansible-playbook -i inventory mina_prekey_setup.yml -e "target=mina1a"
 ```
 
 #### 2. Generate keypair
@@ -13,13 +13,13 @@ ansible-playbook -i inventory mina_prekey_setup.yml -e "target=mina01"
 You have two options here. First, you can set up a new keypair according to https://docs.minaprotocol.com/en/using-mina/keypair, and you will need to copy the public key and password to the inventory file to prepare for the next step. The other option is to copy an existing key pair to the server. You will put the my-wallet and my-wallet.pub in the roles->key->files folder, and then run the playbook
 
 ```bash
-ansible-playbook -i inventory mina_key_setup.yml -e "target=mina01"
+ansible-playbook -i inventory mina_key_setup.yml -e "target=mina1a"
 ```
 
 #### 3. Launch Mina
 
 ```bash
-ansible-playbook -i inventory mina_postkey_setup.yml -e "target=mina01"
+ansible-playbook -i inventory mina_postkey_setup.yml -e "target=mina1a"
 ```
 
 #### Postscript
