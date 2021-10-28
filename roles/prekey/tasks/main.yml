@@ -13,17 +13,8 @@
       - unzip
       - mina-mainnet
       - mina-generate-keypair
-      - mina-bp-stats-sidecar
     state: present
     update_cache: yes
-
-- name: open 80 port
-  command: ufw allow 80/tcp
-  changed_when: false
-
-- name: open 443 port
-  command: ufw allow 443/tcp
-  changed_when: false
 
 - name: open 8302 port
   command: ufw allow 8302/tcp

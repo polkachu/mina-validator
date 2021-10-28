@@ -2,14 +2,54 @@
 
 ## Summary
 
-You run two playbooks to set up a node.
+Three playbooks to set up a node.
+
+#### 1. Prepare a machine before keypair generation
 
 ```bash
 ansible-playbook -i inventory mina_prekey_setup.yml -e "target=mina01"
 ```
 
-Then you set up your key. You can set up a new key according to https://docs.minaprotocol.com/en/using-mina/keypair, or copy over an existing key pair to the folder.
+#### 2. Generate keypair
+
+You have two options here. First, you can set up a new keypair according to https://docs.minaprotocol.com/en/using-mina/keypair, and you will need to copy the public key and password to the inventory file to prepare for the next step. The other option is to copy an existing key pair to the server. You will put the my-wallet and my-wallet.pub in the roles->key->files folder, and then run the playbook
+
+```bash
+ansible-playbook -i inventory mina_key_setup.yml -e "target=mina01"
+```
+
+#### 3. Launch Mina
 
 ```bash
 ansible-playbook -i inventory mina_postkey_setup.yml -e "target=mina01"
+```
+
+#### Postscript
+
+I cannot make the mina client to automatically start with the script. Therefore, you should get into the server and run the following:
+
+```bash
+systemctl --user daemon-reload
+systemctl --user stop mina
+systemctl --user start mina
+systemctl --user enable mina
+sudo loginctl enable-linger
+```
+
+To check the health of mina service:
+
+```bash
+systemctl --user status mina
+```
+
+To check the status of mina client:
+
+```bash
+mina client status
+```
+
+To check the health of mina block producer sidecar:
+
+```bash
+sudo journalctl -f -u mina-bp-stats-sidecar.service
 ```

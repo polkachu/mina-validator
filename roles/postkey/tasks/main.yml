@@ -32,9 +32,31 @@
   remote_user: ubuntu
   shell: |
     systemctl --user daemon-reload
+    systemctl --user stop mina
     systemctl --user start mina
     systemctl --user enable mina
     sudo loginctl enable-linger
   args:
     executable: /bin/bash
   changed_when: false
+
+- name: install packages
+  apt:
+    name:
+      - mina-bp-stats-sidecar
+    state: present
+    update_cache: yes
+
+- name: update sidecar file
+  template:
+    src: mina-sidecar.json.j2
+    dest: /etc/mina-sidecar.json
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Enable sidecar service
+  systemd:
+    name: mina-bp-stats-sidecar
+    state: started
+    enabled: yes

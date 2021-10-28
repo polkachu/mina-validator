@@ -1,0 +1,23 @@
+---
+- name: make sure keys folder exists
+  file:
+    path: /home/ubuntu/keys
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0700'
+
+- name: copy private key file
+  copy:
+    src: 'my-wallet'
+    dest: '/home/ubuntu/keys/my-wallet'
+    owner: ubuntu
+    group: ubuntu
+    mode: '0600'
+
+- name: copy public key file
+  copy:
+    src: 'my-wallet.pub'
+    dest: '/home/ubuntu/keys/my-wallet.pub'
+    owner: ubuntu
+    group: ubuntu
