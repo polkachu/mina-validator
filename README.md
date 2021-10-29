@@ -24,6 +24,8 @@ ansible-playbook -i inventory mina_postkey_setup.yml -e "target=mina1a"
 
 #### Postscript
 
+We highly recommend you install mina monitor. The server process is here: https://github.com/olton/mina-node-monitor/blob/master/server/SERVER-DOCS.md and the client process is here: https://github.com/olton/mina-node-monitor/blob/master/client/CLIENT-DOCS.md. We do not have the Ansible script here. Maybe one day we will update
+
 I cannot make the mina client to automatically start with the script. Therefore, you should get into the server and run the following:
 
 ```bash
@@ -57,3 +59,6 @@ sudo journalctl -f -u mina-bp-stats-sidecar.service
 ```
 B62qizDizMYmXDS7LUkocoYNnrryPCxyrJM2v8eNJzaj31aU9bUfDAM
 ```
+
+curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+sudo apt -y install nodejs
