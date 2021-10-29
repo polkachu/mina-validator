@@ -22,6 +22,18 @@ ansible-playbook -i inventory mina_key_setup.yml -e "target=mina1a"
 ansible-playbook -i inventory mina_postkey_setup.yml -e "target=mina1a"
 ```
 
+#### 4. Install Mina Monitor Server (Optional)
+
+```bash
+ansible-playbook -i inventory mina_monitor_server_setup.yml -e "target=mina1a"
+```
+
+#### 5. Install Mina Monitor Client (Optional)
+
+```bash
+ansible-playbook -i inventory mina_monitor_client_setup.yml -e "target=mina1a"
+```
+
 #### Postscript
 
 We highly recommend you install mina monitor. The server process is here: https://github.com/olton/mina-node-monitor/blob/master/server/SERVER-DOCS.md and the client process is here: https://github.com/olton/mina-node-monitor/blob/master/client/CLIENT-DOCS.md. We do not have the Ansible script here. Maybe one day we will update

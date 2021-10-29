@@ -1,5 +1,5 @@
 [mina1a]
-10.0.0.1 log_name=mina1a private_key_password=SECRET public_key=PUBLIC_KEY
+10.0.0.1 log_name=mina1a private_key_password=SECRET public_key=PUBLIC_KEY mina_ip=10.0.0.1
 
 [mina:children]
 mina1a

@@ -1,0 +1,15 @@
+[Unit]
+Description=Mina Monitor Service
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15
+ExecStart=/usr/bin/node /home/ubuntu/mina-monitor-server/index
+ExecStop=/usr/bin/pkill -9 -f "node mina-monitor-server/index"
+
+[Install]
+WantedBy=multi-user.target
