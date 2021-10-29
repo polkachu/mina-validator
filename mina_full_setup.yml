@@ -16,3 +16,5 @@
     - prekey
     - key
     - postkey
+    - monitor_server
+    - monitor_client
