@@ -25,6 +25,24 @@
   when:
     - not ufw_status_result.stdout is search("30333/tcp.*ALLOW IN.*Anywhere")
 
+- name: disable port sniffing issue
+  command: ufw deny out from any to 10.0.0.0/8
+
+- name: disable port sniffing issue
+  command: ufw deny out from any to 172.16.0.0/12
+
+- name: disable port sniffing issue
+  command: ufw deny out from any to 192.168.0.0/16
+
+- name: disable port sniffing issue
+  command: ufw deny out from any to 100.64.0.0/10
+
+- name: disable port sniffing issue
+  command: ufw deny out from any to 198.18.0.0/15
+
+- name: disable port sniffing issue
+  command: ufw deny out from any to 169.254.0.0/16
+
 - name: enable firewall
   shell: |
     set -o pipefail
