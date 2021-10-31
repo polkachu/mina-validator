@@ -9,6 +9,10 @@
   changed_when: false
 
 - name: open http port 8000
+  command: ufw allow 8000/tcp
+  changed_when: false
+
+- name: open http port 8000
   command: ufw allow 80/tcp
   changed_when: false
 
