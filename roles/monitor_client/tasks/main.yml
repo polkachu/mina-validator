@@ -51,6 +51,19 @@
     owner: ubuntu
     group: ubuntu
 
+- name: register public ip
+  uri:
+    url: 'https://api.ipify.org?format=json'
+  register: public_ip
+
+- name: Move mina monitor
+  copy:
+    remote_src: true
+    src: '/home/{{ ansible_user }}/mina-monitor-client'
+    dest: /home/ubuntu
+    owner: ubuntu
+    group: ubuntu
+
 - name: Make config file
   template:
     src: config.json.j2
