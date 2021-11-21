@@ -21,7 +21,7 @@
 - name: Move mina monitor
   copy:
     remote_src: true
-    src: /root/mina-monitor-server
+    src: /home/{{ ansible_user }}/mina-monitor-server
     dest: /home/ubuntu
     owner: ubuntu
     group: ubuntu
