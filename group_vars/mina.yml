@@ -1,3 +1,3 @@
 version: '1.2.2-feee67c'
-snark_worker_fee: 2500
+snark_worker_fee: 250000
 sidecar_url: 'https://us-central1-mina-mainnet-303900.cloudfunctions.net/block-producer-stats-ingest/?token=72941420a9595e1f4006e2f3565881b5'

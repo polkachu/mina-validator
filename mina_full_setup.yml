@@ -12,9 +12,9 @@
   become: true
   gather_facts: false
   roles:
-    # - prepare
-    # - prekey
-    # - key
-    # - postkey
+    - prepare
+    - prekey
+    - key
+    - postkey
     - monitor_server
     - monitor_client

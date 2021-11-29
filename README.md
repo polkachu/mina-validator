@@ -73,6 +73,3 @@ sudo journalctl -f -u mina-bp-stats-sidecar.service
 ```
 B62qizDizMYmXDS7LUkocoYNnrryPCxyrJM2v8eNJzaj31aU9bUfDAM
 ```
-
-curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-sudo apt -y install nodejs
