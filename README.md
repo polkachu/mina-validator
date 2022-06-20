@@ -1,4 +1,4 @@
-# Mina Validator Node Ansible Setup!
+# Mina Validator Node Ansible Setup
 
 Three playbooks to set up a node.
 
